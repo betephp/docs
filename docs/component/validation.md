@@ -55,17 +55,35 @@ public function run(Request $request)
         ];
 
         app()->validator->validate($data, $rules);
-
-        app()->session->setFlash('message', '验证成功');
-
-        app()->response->redirect('/example/validation');
     }
-
-    return $this->render('example/validation');
 }
 ```
 
 ## 手动验证
+
+有些时候，可能需要手动去完成验证逻辑，在验证失败后做一些自定义的逻辑处理，这时候我们可以使用validator组件的make方法新建一个validator类，并调用fails/passes方法进行数据校验，示例代码如下：
+
+```php
+public function run(Request $request)
+{
+    if ($request->isPost()) {
+        $data = $request->post();
+        $rules = [
+            'name' => 'required|chinese|between:2,20|name:姓名',
+            'mobile' => 'required|mobile|name:手机号码',
+            'email' => 'required|email|name:邮箱地址',
+        ];
+
+        $validator = app()->validator->make($data, $rules);
+
+        if ($validator->fails()) {
+            //todo display error message
+        } else {
+            //todo insert data to database
+        }
+    }
+}
+```
 
 ## 可用的验证规则
 
@@ -118,7 +136,7 @@ public function run(Request $request)
 验证的字段必须是一个可用的身份证号码
 
 ### in:a,b,c,...
-验证的字段必须是一个给出值的某一个
+验证的字段必须在给出的值列表内
 
 ### integer
 验证的字段必须是一个整型数字
@@ -129,62 +147,35 @@ public function run(Request $request)
 ### json
 验证的字段必须是一个合法的JSON字符串
 
-### max
-验证的字段必须是一个可用的邮箱地址
+### max:value
+验证的字段必须小于等于value
 
-### min
-验证的字段必须是一个可用的邮箱地址
+### min:value
+验证的字段必须大于等于value
 
 ### mobile
-验证的字段必须是一个可用的邮箱地址
+验证的字段必须是一个手机号码
 
-### not_in
-验证的字段必须是一个可用的邮箱地址
+### not_in:a,b,c,...
+验证的字段必须不在给出的值列表内
 
 ### numeric
-验证的字段必须是一个可用的邮箱地址
+验证的字段必须是一个数字
 
-### regex
-验证的字段必须是一个可用的邮箱地址
+### regex:pattern
+验证的字段必须正则匹配pattern
 
 ### required
-验证的字段必须是一个可用的邮箱地址
+验证的字段是必填字段
 
-### same
-验证的字段必须是一个可用的邮箱地址
+### same:field
+验证的字段必须和field字段值相同
 
-### size
-验证的字段必须是一个可用的邮箱地址
+### size:value
+验证的字段的size必须等于value，size的含义对于数字，则为值；对于字符串，则为字符串的长度；对于数组，则为数组元素数量
 
 ### string
-验证的字段必须是一个可用的邮箱地址
+验证的字段必须是一个字符串
 
-### required
-验证的字段必须是一个可用的邮箱地址
-
-### 
-
-
-
-
-### after:date
-date必须是一个可用的日期
-
-
-
-
-### after:date
-date必须是一个可用的日期
-
-
-
-
-### after:date
-date必须是一个可用的日期
-
-
-
-
-
-
-
+### url
+验证的字段必须是一个合法的URL
