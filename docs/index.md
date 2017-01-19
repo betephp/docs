@@ -8,7 +8,7 @@ BetePHP是一个易于学习使用的高性能PHP框架。我们坚信好的框�
 根据二八法则，80%的情况只使用了20%的功能，BetePHP的目标则是专注于这20%的功能，其他的情况则通过框架提供的扩展来完成。BetePHP本身没有包含事件、用户认证、模版引擎等特性，开发者可以根据需要自行扩展。
 
 ## 为什么没有Controller？
-我们发现一个MVC应用，大部分的逻辑会放到Controller的action中，随着时间的推移，你会惊奇的发现，Controller变得如此之大，因此我们将Controller的action分离成单个的Action，每一个接口对应着一个Action，你可以在Action里对接口做单独的设置，并且省去了加载大文件的时间。
+通常一个MVC应用，请求输入处理，调用Model逻辑，都会放到Controller的action中，随着时间的推移，包含多个action的Controller就会变的越来越大，因此我们将Controller的action分离成单个的Action，每一个接口对应着一个Action，这样省去加载Controller无关action的时间。
 
 ## 性能对比
 同一台服务器各框架QPS对比（越高越好）：
@@ -20,9 +20,9 @@ BetePHP是一个易于学习使用的高性能PHP框架。我们坚信好的框�
 
 框架名 | 文件数量 | 项目大小
 ------------ | ------------- | -------------
-BetePHP | 130 | 1M-
-Yii2 | 5500   | 50M+
-Laravel | 7900 | 50M+
+BetePHP | 130 | <1M
+Yii2 | 5500   | >50M
+Laravel | 7900 | >50M
 
 ## 基础功能
 框架名 | 路由 | 中间件 | 数据校验 | ORM | 日志
