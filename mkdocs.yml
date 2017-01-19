@@ -4,24 +4,18 @@ pages:
 - '首页': 'index.md'
 - '入门':
     - '安装': 'intro/install.md'
-    - '预览': 'intro/overview.md'
+    - '框架预览': 'intro/overview.md'
     - '开发第一个功能': 'intro/first-feature.md'
-- 'Web': 
-    - '介绍': 'web/intro.md'
-    - '路由': 'web/route.md'
-    - '中间件': 'web/middleware.md'
-    - '请求相应处理': 'web/request.md'
-- '命令行':
-    - '介绍': 'console/intro.md'
-    - '请求相应处理': 'console/request.md'
-    - '代码生成器': 'console/make.md'
+- '运行模式':
+    - 'Web': 'web/intro.md'
+    - 'Console': 'console/intro.md'
 - '组件':
     - '验证': 'component/validation.md'
     - '日志': 'component/log.md'
     - 'Session & Cookie': 'component/session-cookie.md'
     - 'Redis': 'component/redis.md'
     - '视图': 'component/view.md'
-    - '如何写一个组件': 'component/extension.md'
+    - '如何编写自定义组件': 'component/extension.md'
 - '数据库':
     - '数据库入门': 'database/intro.md'
     - 'Query Builder': 'database/query-builder.md'

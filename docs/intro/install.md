@@ -8,23 +8,30 @@
 
 ## 安装
 
-#### 下载release包安装
-打开下面其中一个release包下载页面，选择最新release包下载：
+### 下载release包安装
+打开下面其中一个release包下载页面，选择最新release版本包下载，解压下载的压缩包：
 
 ```
+http://git.oschina.net/betephp/betephp/releases
+
 https://github.com/betephp/betephp-release/releases
-https://coding.net/u/eccozhou/p/betephp/git/tags
 ```
 
-解压zip包，进入项目根目录（下文未特殊注明，目录起始位置均为此根目录）
+### 使用composer安装
 
 ```bash
-cd betephp-xxx #进入项目根目录
+composer create-project --prefer-dist betephp/betephp myproject
+```
+
+进入项目根目录（下文未特殊注明，目录起始位置均为此根目录）
+
+```bash
+cd betephp(myproject) #进入项目根目录
 ```
 
 ## 配置
 ### 建立app.ini配置文件
-按如下操作复制app.ini.example来新建app.ini，然后编辑app.ini以适配当前环境；
+复制app.ini.example为app.ini，修改app.ini环境变量、数据库连接等适配当前环境；
 
 ```bash
 cd config
@@ -40,11 +47,12 @@ chmod -R 777 runtime/
 ### 使用PHP内置Server启动App
 ```bash
 cd public
-php -S localhost:9090
+php -S yourhost:9090
 ```
 
 ## 验证
-在浏览器打开```http://localhost:9090```
+在浏览器打开`http://yourhost:9090`，验证页面是否出现下图。
+![Screenshot](/img/homepage.png)
 
 
 ## Web服务器配置
