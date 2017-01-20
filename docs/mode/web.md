@@ -15,7 +15,7 @@ BetePHP处理一个典型的Web请求通常经过Route、Middleware、Action、M
 
 ## Web路由
 
-默认情况下，框架会将`<abc>/<def>`的请求路由到App\Web\<Abc>命名空间下的<Def>.php Action文件中。如果你需要改变这个规则，你需要使用自定义路由。
+默认情况下，框架会将`<abc>/<def>`的请求路由到App\Web\<Abc>命名空间下的<Def>.php Action文件中。如果你需要改变这个规则，你需要在路由层使用自定义路由。
 
 ### 自定义路由
 修改`config/route.php`文件配置你的自定义路由规则。
