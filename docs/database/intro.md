@@ -47,8 +47,11 @@ return [
 
 
 ## 事务
+
+```php
 DB::transaction(function () {
     DB::table('users')->update(['votes' => 1]);
 
     DB::table('posts')->delete();
 });
+```
