@@ -92,9 +92,10 @@ return [
 ```php
 <?php
 
-namespace App\Http\Home;
+namespace App\Web\Home;
 
-use Bete\Http\Action;
+use Bete\Web\Action;
+use Bete\Web\Request;
 
 class Index extends Action
 {
@@ -107,7 +108,7 @@ class Index extends Action
         ];
     }
 
-    public function run($request)
+    public function run(Request $request)
     {
         //todo ...
     }
@@ -118,31 +119,28 @@ class Index extends Action
 
 ## 请求响应处理
 
-### 请求参数
-获取请求参数，你可以使用request服务的get()、post()方法，他们将返回$_GET、$_POST内容：
-```
-$request = app()->request;
+### 请求处理
+获取请求参数，你可以使用Request对象的`get()`、`post()`方法获取GET/POST参数，可以通过`isGet()`、`isPost()`判断请求的类型。
 
-// equivalent to $get = $_GET;
-$get = $request->get('name');
+```php
+public function run(Request $request)
+{
+    $name = $request->get('name');
+    $birthday = $request->post('birthday');
 
-// equivalent to $name = isset($_GET['name']) ? $_GET['name'] : null;
-$name = $request->get('name');
-
-```
-
-### 请求方法
-```
-$request = app()->request;
-
-$request->isGet();
-$request->isPost();
+    if ($request->isPost()) { // if post request
+        ...
+    }
+}
 ```
 
-### 请求URL
-```
-$request = app()->request;
+### 响应处理
+你可以通过response组件来刷新页面或者重定向页面，
 
-$request->isGet();
-$request->isPost();
+```php
+public function run(Request $request)
+{
+    app()->response->redirect('/');
+    app()->response->refresh();
+}
 ```
