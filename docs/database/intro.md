@@ -44,3 +44,11 @@ return [
 
 ### 读写分离配置
 有些时候，你的数据库架构可能是一主一从，或者多主多从，这时候，你可以读写分离配置来配置你的数据库连接。
+
+
+## 事务
+DB::transaction(function () {
+    DB::table('users')->update(['votes' => 1]);
+
+    DB::table('posts')->delete();
+});
