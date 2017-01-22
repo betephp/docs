@@ -5,7 +5,7 @@ pages:
 - '入门':
     - '安装': 'intro/install.md'
     - '框架预览': 'intro/overview.md'
-    - '开发第一个功能': 'intro/first-feature.md'
+    - 'Hello World!': 'intro/first-feature.md'
 - '运行模式':
     - 'Web': 'mode/web.md'
     - 'Console': 'mode/console.md'

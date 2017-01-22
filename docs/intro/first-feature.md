@@ -1,60 +1,76 @@
-# 开发第一个功能
+# Hello World!
+该部分创建一个请求URL地址为say/hello的Web页面，展示内容为'Hello world!'。为了完成这个目标，我们需要创建一个Web Action和一个视图文件。
 
-## 接口功能说明
-功能：用户填写一个表单，提交反馈信息，如果输入信息错误，提示错误消息，正确则把内容保存到数据库；
+### 创建Web Action
+为了创建`say/hello`请求的Web Action，可以在`app/Web/Say`下新建`Hello.php`来完成，也可以通过下面的命令行代码生成工具来完成。
 
-## 开发步骤
-### 准备数据表
-```sql
-CREATE TABLE `feedback` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `content` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `mobile` varchar(100) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-ALTER TABLE `feedback` ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `feedback` MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+```bash
+./bete make:web say/hello
 ```
 
-### 配置数据库
+上述命令将建立`app/Web/Say/Hello.php`文件，内容如下：
 
+```php
+<?php
 
-### 创建一个Feedback Model
-```
-./bete make:model Feedback
-```
+namespace App\Web\Say;
 
-### 创建一个Web Action
-```
-./bete make:web user/feedback
-```
+use Bete\Web\Action;
+use Bete\Web\Request;
 
-###
-在```app/view```目录下新建```user/feedback.php```文件，包含下面内容：
-```
-<!DOCTYPE html>
-<html>
-<head>
-    <title><?= $this->title ?></title>
-</head>
-<body>
+class Hello extends Action
+{
 
-<?php foreach ($errors as $error) : ?>
-    <div><?= $error; ?></div>
-<?php endforeach; ?>
+    public $renderType = self::TYPE_HTML;
 
-<form method="POST" id="reg">
-    <input type="text" name="username" id="username">
-    <input type="password" name="mobile" id="mobile">
-    <input type="submit" name="sub" id="sub1" value="Submit">
-</form>
-</body>
-</html>
+    public function middlewares()
+    {
+        return [];
+    }
+
+    public function run(Request $request)
+    {
+        return "Hello, Say/Hello.";
+    }
+
+}
 ```
 
+这时你打开`http://yourhost/say/hello`，将看到页面展示'Hello, Say/Hello.'。
 
-### 运行
-在浏览器打开```http://localhost:9090/user/feedback```，查看效果。
+我们继续下一步，我们需要显示'Hello world!'，这里我们Hello就通过视图展现，World则通过Action的变量传递给视图。因为需要用视图渲染页面，并且需要传递变凉给视图，我们需要用到Action的`render()`，`render()`方法第一个参数是具体的视图文件，第二个参数则是传递变量组成的数据。更改后的Action如下：
+
+```php
+<?php
+
+namespace App\Web\Say;
+
+use Bete\Web\Action;
+use Bete\Web\Request;
+
+class Hello extends Action
+{
+
+    public $renderType = self::TYPE_HTML;
+
+    public function middlewares()
+    {
+        return [];
+    }
+
+    public function run(Request $request)
+    {
+        return $this->render('say/hello', ['name' => 'world']);
+    }
+
+}
+```
+
+### 创建视图
+然后新建`app/view/say/hello.php`的视图文件，内容如下：
+
+```php
+Hello <?= $name ?>.
+```
+
+这时打开`http://yourhost/say/hello`，查看页面是否显示'Hello world!'。

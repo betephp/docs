@@ -56,7 +56,7 @@ php -S yourhost:9090
 
 
 ## Web服务器配置
-通常PHP是与Nignx、Apache一起运行。
+通常BetePHP是运行在PHP与Nignx/Apache组成的环境下。推荐的Nginx/Apache配置如下：
 
 ### Nginx配置
 将Nginx的root设置为public目录，在nginx配置添加如下配置：
