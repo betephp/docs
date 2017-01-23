@@ -116,11 +116,41 @@ class Index extends Action
 }
 ```
 
+## Web Action
+一个请求具体的业务逻辑定义在Action内。如下所示，Action可以通过`$renderType`属性定义这个Web接口的输出格式；可以定一个`middlewares()`方法，配置当前Action的中间件；具体的业务逻辑则定义在`run()`方法内。
+
+```php
+<?php
+
+namespace App\Web\Home;
+
+use Bete\Web\Action;
+use Bete\Web\Request;
+
+class Index extends Action
+{
+    public $renderType = self::TYPE_HTML;
+
+    public function middlewares()
+    {
+        return [
+            'App\Middleware\PageCache',
+        ];
+    }
+
+    public function run(Request $request)
+    {
+        //todo ...
+    }
+
+}
+```
+
 
 ## 请求响应处理
 
 ### 请求处理
-获取请求参数，你可以使用Request对象的`get()`、`post()`方法获取GET/POST参数，可以通过`isGet()`、`isPost()`判断请求的类型。
+获取请求参数，你可以使用Request对象(`run()`方法的参数)的`get()`、`post()`方法获取GET/POST参数，可以通过`isGet()`、`isPost()`判断请求的类型。
 
 ```php
 public function run(Request $request)
