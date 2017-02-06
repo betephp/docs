@@ -50,9 +50,7 @@ php -S yourhost:9090
 ```
 
 ## 验证
-在浏览器打开`http://yourhost:9090`，验证页面是否出现下图。
-![Screenshot](/img/homepage.png)
-
+在浏览器打开`http://yourhost:9090`，验证是否出现欢迎使用BetePHP页面。
 
 ## Web服务器配置
 通常BetePHP是运行在PHP与Nignx/Apache组成的环境下。推荐的Nginx/Apache配置如下：
