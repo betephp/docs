@@ -1,7 +1,7 @@
-# BetePHP - Let's make it Better.
+# BetePHP - Let's make it better.
 
 
-BetePHP是一个易于学习使用的高性能PHP框架。我们坚信一个好的PHP框架应该是简单、易学易用，且不影响性能的。
+BetePHP是一个易于学习使用的高性能PHP框架。我们坚信一个好的PHP框架应该是简单、易学易用，且不影响性能的。BetePHP将常用的组件功能使用统一的风格设计封装，且无任何外部库依赖，实现了一个简单易学、性能高效的PHP框架。
 
 ### 特点
 * 简单灵活的路由引擎
@@ -31,6 +31,7 @@ return [
 * Cookie
 * Session
 * Redis
+* ...
 
 #### 统一的接口风格
 
