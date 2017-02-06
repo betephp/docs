@@ -8,19 +8,18 @@
 
 ## 安装
 
-### 下载release包安装
-打开下面其中一个release包下载页面，选择最新release版本包下载，解压下载的压缩包：
-
-```
-http://git.oschina.net/betephp/betephp/releases
-
-https://github.com/betephp/betephp-release/releases
-```
 
 ### 使用composer安装
 
 ```bash
 composer create-project --prefer-dist betephp/betephp myproject
+```
+
+### 下载release包安装
+打开下面其中一个release包下载页面，选择最新release版本包下载，解压下载的压缩包：
+
+```
+http://git.oschina.net/betephp/betephp/releases
 ```
 
 进入项目根目录（下文未特殊注明，目录起始位置均为此根目录）

@@ -11,7 +11,6 @@ public function run(Request $request)
         $data = $request->post();
         $rules = [
             'name' => 'required|chinese|between:2,20',
-            'mobile' => 'required|mobile',
             'email' => 'required|email',
         ];
 
@@ -34,7 +33,6 @@ public function run(Request $request)
     <?php endif; ?>
 
     <div><input type="text" class="input-text" name="name" placeholder="姓名"></div>
-    <div><input type="text" class="input-text" name="mobile" placeholder="手机"></div>
     <div><input type="text" class="input-text" name="email" placeholder="邮箱"></div>
     <div><input type="submit" class="input-submit" name="sub" value="提交"></div>
 
@@ -50,7 +48,6 @@ public function run(Request $request)
         $data = $request->post();
         $rules = [
             'name' => 'required|chinese|between:2,20|name:姓名',
-            'mobile' => 'required|mobile|name:手机号码',
             'email' => 'required|email|name:邮箱地址',
         ];
 
@@ -70,7 +67,6 @@ public function run(Request $request)
         $data = $request->post();
         $rules = [
             'name' => 'required|chinese|between:2,20|name:姓名',
-            'mobile' => 'required|mobile|name:手机号码',
             'email' => 'required|email|name:邮箱地址',
         ];
 
@@ -132,9 +128,6 @@ public function run(Request $request)
 ### email
 验证的字段必须是一个可用的邮箱地址
 
-### id_card
-验证的字段必须是一个可用的身份证号码
-
 ### in:a,b,c,...
 验证的字段必须在给出的值列表内
 
@@ -152,9 +145,6 @@ public function run(Request $request)
 
 ### min:value
 验证的字段必须大于等于value
-
-### mobile
-验证的字段必须是一个手机号码
 
 ### not_in:a,b,c,...
 验证的字段必须不在给出的值列表内
