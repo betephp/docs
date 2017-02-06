@@ -26,7 +26,7 @@ composer create-project --prefer-dist betephp/betephp myproject
 进入项目根目录（下文未特殊注明，目录起始位置均为此根目录）
 
 ```bash
-cd betephp(myproject) #进入项目根目录
+cd myproject #进入项目根目录
 ```
 
 ## 配置
