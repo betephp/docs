@@ -21,7 +21,7 @@ return [
 ```
 
 #### 高性能
-在阿里云单核1G云服务器运行，各框架QPS对比:（越高越好）
+在单核1G服务器运行，各框架QPS对比:（越高越好）
 
 ![Screenshot](/img/performance.png)
 
