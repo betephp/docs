@@ -4,13 +4,12 @@
 ```
 app                             # App命名空间目录
     Console                     # 包含命令行Action
-        Blog/DailyUpdate.php    # ./bete blog:dailyUpdate
+        ExampleController.php   # ./bete blog:dailyUpdate
     Exception                   # 包含用户自定义异常
-    Http                        # 包含Http Action
-        Home/Index.php          # http://localhost/home/index
+    Web                         # 包含Http Action
+        ExampleController.php   # http://localhost/home/index
     Middleware                  # 中间件文件夹
     Model                       # 存放业务Model
-    view                        # 包含普通视图和布局视图
 bootstrap                       # bootstrap
     app.php                     # app.php
 config                          # 包含应用配置信息
@@ -28,11 +27,12 @@ runtime                         # runtime目录，包含程序运行期间生成
     log                         # 日志目录
     session                     # 文件session目录
 vendor                          # composer vender
+view                            # 包含普通视图和布局视图
 ```
 
 
 ## 代码生成工具
-为了减少新建类时代码复制等重复工作，BetePHP使用命令行简化创建Model、中间件、Action的工作；
+为了减少新建类时代码复制等重复工作，BetePHP使用命令行简化创建Model、Controller、中间件的工作；
 
 ```bash
 # 创建User Model
@@ -41,11 +41,11 @@ vendor                          # composer vender
 # 创建CheckToken中间件
 ./bete make:middleware CheckToken
 
-# 创建接口为order/info的HTTP接口
-./bete make:http order/info
+# 创建Web Controller
+./bete make:web Order
 
-# 创建order:dailyUpdate定时任务
-./bete make:console order:dailyUpdate
+# 创建Console Controller
+./bete make:console Task
 ```
 
 ## 接口预览
@@ -84,7 +84,6 @@ $post = $request->post();
 $rules = [
     'title' => 'required|string|between:5,50|name:标题',
     'content' => 'required|string|name:内容',
-    'mobile' => 'required|mobile|name:手机号码',
     'email' => 'required|email|name:邮箱地址',
 ];
 app()->validator->validate($post, $rules);

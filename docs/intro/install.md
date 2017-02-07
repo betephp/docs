@@ -8,6 +8,7 @@
 
 ## 安装
 
+你可以通过composer或者直接下载release包安装BetePHP。
 
 ### 使用composer安装
 
@@ -16,7 +17,7 @@ composer create-project --prefer-dist betephp/betephp myproject
 ```
 
 ### 下载release包安装
-打开下面其中一个release包下载页面，选择最新release版本包下载，解压下载的压缩包：
+打开下面release包下载页面，选择最新release版本包下载：
 
 ```
 http://git.oschina.net/betephp/betephp/releases
