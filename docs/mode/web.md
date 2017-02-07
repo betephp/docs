@@ -99,7 +99,7 @@ class ExampleController extends Controller
 上述配置为example的所有action添加了CheckToken中间件；为register, login添加了CheckCsrf中间件，为除了index以外的action添加了CheckLogin中间件。
 
 ## Controller
-一个请求具体的业务逻辑定义在Controller的action方法内。如下所示：
+一个Web请求具体的业务逻辑定义在App\Web\{Name}Controller的action{Name}方法内。如下所示：
 
 ```php
 <?php
