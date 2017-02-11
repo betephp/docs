@@ -1,0 +1,21 @@
+site_name: BetePHP
+theme_dir: cinder
+pages:
+- 'Home': 'index.md'
+- 'Get started':
+    - 'Install': 'intro/install.md'
+    - 'Overview': 'intro/overview.md'
+    - 'Hello World!': 'intro/hello-world.md'
+- 'Run mode':
+    - 'Web': 'mode/web.md'
+    - 'Console': 'mode/console.md'
+- 'Component':
+    - 'Validator': 'component/validation.md'
+    - 'Log': 'component/log.md'
+    - 'Session & Cookie': 'component/session-cookie.md'
+    - 'Redis': 'component/redis.md'
+    - 'How to write your own component': 'component/extension.md'
+- 'Database':
+    - 'Database get started': 'database/intro.md'
+    - 'Query Builder': 'database/query-builder.md'
+    - 'Model': 'database/model.md'

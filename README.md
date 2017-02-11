@@ -1,5 +1,5 @@
-# BetePHP官方文档
+# BetePHP Documentation
 
-## 贡献
+## Contribute
 
-如果你有兴趣共同编写BetePHP文档，请向此库提交Pull Request。
+If you are interested in writing documentation for BetePHP, please submit pull request for this git respository.

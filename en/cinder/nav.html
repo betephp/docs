@@ -44,18 +44,18 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> 搜索
+                        <i class="fa fa-search"></i> Search
                     </a>
                 </li>
                 {% if include_next_prev %}
                     <li {% if not previous_page %}class="disabled"{% endif %}>
                         <a rel="next" {% if previous_page %}href="{{ previous_page.url }}"{% endif %}>
-                            <i class="fa fa-arrow-left"></i> 上一页
+                            <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li {% if not next_page %}class="disabled"{% endif %}>
                         <a rel="prev" {% if next_page %}href="{{ next_page.url }}"{% endif %}>
-                            下一页 <i class="fa fa-arrow-right"></i>
+                            Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
                 {% endif %}
@@ -73,7 +73,12 @@
                 {% endif %}
                 <li>
                     <a href="https://github.com/betephp/betephp" target="_blank">
-                        <i class=""></i> Github
+                        <i class=""></i> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="http://betephp.com/zh">
+                        <i class=""></i> 中文版
                     </a>
                 </li>
             </ul>
