@@ -18,4 +18,3 @@ pages:
 - 'Database':
     - 'Database get started': 'database/intro.md'
     - 'Query Builder': 'database/query-builder.md'
-    - 'Model': 'database/model.md'
