@@ -6,8 +6,8 @@ pages:
     - '安装': 'intro/install.md'
     - '框架预览': 'intro/overview.md'
     - 'Hello World!': 'intro/hello-world.md'
-    - 'Web': 'mode/web.md'
-    - 'Console': 'mode/console.md'
+    - 'Web': 'intro/web.md'
+    - 'Console': 'intro/console.md'
 - '组件':
     - '验证': 'component/validation.md'
     - '日志': 'component/log.md'
