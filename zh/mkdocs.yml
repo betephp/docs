@@ -6,7 +6,6 @@ pages:
     - '安装': 'intro/install.md'
     - '框架预览': 'intro/overview.md'
     - 'Hello World!': 'intro/hello-world.md'
-- '运行模式':
     - 'Web': 'mode/web.md'
     - 'Console': 'mode/console.md'
 - '组件':
@@ -14,11 +13,7 @@ pages:
     - '日志': 'component/log.md'
     - 'Session & Cookie': 'component/session-cookie.md'
     - 'Redis': 'component/redis.md'
-    - '视图': 'component/view.md'
     - '如何编写自己的组件': 'component/extension.md'
 - '数据库':
     - '数据库入门': 'database/intro.md'
     - 'Query Builder': 'database/query-builder.md'
-    - 'Model': 'database/model.md'
-- '其他':
-    - '错误处理': 'other/exception-handler.md'
