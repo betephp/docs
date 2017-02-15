@@ -1,6 +1,6 @@
 # BetePHP
 
-BetePHP is a lightweight, high performance PHP framework. we believe a good PHP framework should be simple, clean and don't effect performance to much, BetePHP is combined by some frequently used component, without dependency on any composer package, the main feature include:
+BetePHP is a lightweight, high performance PHP framework. we believe a good PHP framework should be simple, clean and don't effect performance too much, BetePHP is combined by some frequently used component, without dependency on any composer package, the main feature include:
 
 * Simple, flexible route engine
 * High performance
