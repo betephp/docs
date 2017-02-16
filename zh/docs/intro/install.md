@@ -17,10 +17,10 @@ composer create-project --prefer-dist betephp/betephp myproject
 ```
 
 ### 下载release包安装
-打开下面release包下载页面，选择最新release版本包下载：
+打开下面release包下载页面，选择最新的`release.zip`下载：
 
 ```
-http://git.oschina.net/betephp/betephp/releases
+https://github.com/betephp/betephp/releases
 ```
 
 进入项目根目录（下文未特殊注明，目录起始位置均为此根目录）

@@ -17,10 +17,10 @@ composer create-project --prefer-dist betephp/betephp myproject
 ```
 
 ### Install with downloading release archive
-Open the below page, and choose the newest release achive to download:
+Open the below release page, and choose the latest `release.zip` to download:
 
 ```
-http://git.oschina.net/betephp/betephp/releases
+https://github.com/betephp/betephp/releases
 ```
 
 Enter project root: (The inital directory of operation is the project root if we don't illustrate especially)

@@ -99,7 +99,6 @@ return [
         'Bete\Redis\RedisComponent',
         'Bete\Cookie\CookieComponent',
         'Bete\Session\SessionComponent',
-        'Bete\Encrypt\EncryptComponent',
         'App\Component\SmartyComponent',
     ],
     ...

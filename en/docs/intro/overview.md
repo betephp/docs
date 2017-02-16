@@ -71,10 +71,6 @@ app()->session->get();
 app()->db->table('user')->where('id', 1)->first();
 app()->db->table('order')->where('type', '=' 1)->all();
 
-# Encrypt
-app()->encrypter->encrypt($data);
-app()->encrypter->decrypt($data);
-
 # Redis
 app()->redis->set();
 app()->redis->get();

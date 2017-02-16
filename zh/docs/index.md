@@ -40,7 +40,5 @@ app()->cookie->set('name', 'value');
 
 app()->session->set('name', 'value');
 
-app()->encrypter->encrypt($data);
-
 app()->redis->set('key', 'value');
 ```
