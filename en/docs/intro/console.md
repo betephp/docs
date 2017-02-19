@@ -3,7 +3,7 @@
 If you need to process some task periodically, the console mode is what you need.
 
 ## Controller
-Similar to web mode, the main logic in console mode is defined in the `action{Name}` method of `App\Console\{Name}Controller`, see below:
+Similar to http mode, the main logic in console mode is defined in the `action{Name}` method of `App\Console\{Name}Controller`, see below:
 
 ```php
 <?php
@@ -29,7 +29,7 @@ class ExampleController extends Controller
 ```
 
 ## Request
-Similar to web, you need get some parameters when execute a command, `Bete\Console\Request`'s `param()`, `option()` is your tools, you can get paramter and option when execute a command:
+Similar to http, you need get some parameters when execute a command, `Bete\Console\Request`'s `param()`, `option()` is your tools, you can get paramter and option when execute a command:
 
 ```php
 class ExampleController extends Controller
@@ -60,6 +60,6 @@ To reduce the repeated work of creating a class, BetePHP offer console tool to c
 ```bash
 ./bete make:model UserFeedback
 ./bete make:middleware CheckToken
-./bete make:web User
+./bete make:http User
 ./bete make:console Task
 ```

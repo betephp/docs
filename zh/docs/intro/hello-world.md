@@ -1,23 +1,23 @@
 # Hello World!
 
-本文创建一个请求URL地址为hello/world的Web页面，展示内容为'Hello world!'。为了完成这个目标，我们需要创建一个Web Controller和一个视图文件。
+本文创建一个请求URL地址为hello/world的Http页面，展示内容为'Hello world!'。为了完成这个目标，我们需要创建一个Http Controller和一个视图文件。
 
-### 创建Web Controller
-为了创建`say/hello`请求的Web Action，可以在`app/Web/Say`下新建`Hello.php`来完成，也可以通过下面的命令行代码生成工具来完成。
+### 创建Http Controller
+为了创建`say/hello`请求的Http Action，可以在`app/Http/Say`下新建`Hello.php`来完成，也可以通过下面的命令行代码生成工具来完成。
 
 ```bash
 ./bete make:web Hello
 ```
 
-上述命令将建立`app/Web/HelloController.php`文件，内容如下：
+上述命令将建立`app/Http/HelloController.php`文件，内容如下：
 
 ```php
 <?php
  
- namespace App\Web;
+ namespace App\Http;
  
- use App\Web\Controller;
- use Bete\Web\Request;
+ use App\Http\Controller;
+ use Bete\Http\Request;
  
  class HelloController extends Controller
  {
@@ -35,10 +35,10 @@
 ```php
 <?php
  
-namespace App\Web;
+namespace App\Http;
 
-use App\Web\Controller;
-use Bete\Web\Request;
+use App\Http\Controller;
+use Bete\Http\Request;
 
 class HelloController extends Controller
 {

@@ -3,7 +3,7 @@
 如果你需要在后台按周期执行业务逻辑，你就需要用到Console模式。
 
 ## Controller
-同Web模式类似，Console的具体的业务逻辑定义在App\Console\{Name}Controller的action{Name}方法内。如下所示：
+同Http模式类似，Console的具体的业务逻辑定义在App\Console\{Name}Controller的action{Name}方法内。如下所示：
 
 ```php
 <?php
@@ -56,11 +56,11 @@ class ExampleController extends Controller
 
 ## 代码自动生成
 
-为了减少重复代码编写的时间，BetePHP支持Model、Middleware、Web Controller、Console Controller代码的自动生成。
+为了减少重复代码编写的时间，BetePHP支持Model、Middleware、Http Controller、Console Controller代码的自动生成。
 
 ```bash
 ./bete make:model UserFeedback
 ./bete make:middleware CheckToken
-./bete make:web User
+./bete make:http User
 ./bete make:console Task
 ```

@@ -1,8 +1,8 @@
-# Web
+# Http
 
-BetePHP将应用运行模式分为Web和Console，Web模式用于处理用户的Web请求，Console用于通过命令行来使用应用。
+BetePHP将应用运行模式分为Http和Console，Http模式用于处理用户的Http请求，Console用于通过命令行来使用应用。
 
-BetePHP处理一个典型的Web请求通常经过Route、Middleware、Controller、Model、View这几层，如下所示：
+BetePHP处理一个典型的Http请求通常经过Route、Middleware、Controller、Model、View这几层，如下所示：
 ![Screenshot](/img/process.png)
 
 1. 用户请求一个URL，框架根据路由配置，将请求转发到具体的Action。
@@ -15,7 +15,7 @@ BetePHP处理一个典型的Web请求通常经过Route、Middleware、Controller
 
 ## 路由
 
-默认情况下，框架会将`abc/def`的请求路由到App\Web\AbcController的actionDef方法。Action文件中。如果你需要改变这个规则，你需要在路由层配置自定义路由规则。
+默认情况下，框架会将`abc/def`的请求路由到App\Http\AbcController的actionDef方法。Action文件中。如果你需要改变这个规则，你需要在路由层配置自定义路由规则。
 
 ### 自定义路由
 修改`config/route.php`文件配置你的自定义路由规则。
@@ -82,9 +82,9 @@ class CheckLogin extends Middleware
 
 <?php
  
-namespace App\Web;
+namespace App\Http;
 
-use Bete\Web\Request;
+use Bete\Http\Request;
 
 class ExampleController extends Controller
 {
@@ -99,14 +99,14 @@ class ExampleController extends Controller
 上述配置为example的所有action添加了CheckToken中间件；为register, login添加了CheckCsrf中间件，为除了index以外的action添加了CheckLogin中间件。
 
 ## Controller
-一个Web请求具体的业务逻辑定义在App\Web\{Name}Controller的action{Name}方法内。如下所示：
+一个Http请求具体的业务逻辑定义在App\Http\{Name}Controller的action{Name}方法内。如下所示：
 
 ```php
 <?php
 
-namespace App\Web;
+namespace App\Http;
 
-use Bete\Web\Request;
+use Bete\Http\Request;
 
 class ExampleController extends Controller
 {

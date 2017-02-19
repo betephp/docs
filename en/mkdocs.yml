@@ -6,7 +6,7 @@ pages:
     - 'Install': 'intro/install.md'
     - 'Overview': 'intro/overview.md'
     - 'Hello World!': 'intro/hello-world.md'
-    - 'Web': 'intro/web.md'
+    - 'Http': 'intro/http.md'
     - 'Console': 'intro/console.md'
 - 'Components':
     - 'Validator': 'component/validation.md'

@@ -1,17 +1,17 @@
 # Hello World!
 
-This section introduce how to create a web page, and show 'Hello BetePHP!'. To achieve this goal, we need to create a Web Controller and a view.
+This section introduce how to create a web page, and show 'Hello BetePHP!'. To achieve this goal, we need to create a Http Controller and a view.
 
-## Creating Web Controller
-First, we need to create HelloController(`app/Web/HelloController`), the below is the content:
+## Creating Http Controller
+First, we need to create HelloController(`app/Http/HelloController`), the below is the content:
 
 ```php
 <?php
  
- namespace App\Web;
+ namespace App\Http;
  
- use App\Web\Controller;
- use Bete\Web\Request;
+ use App\Http\Controller;
+ use Bete\Http\Request;
  
  class HelloController extends Controller
  {
@@ -28,10 +28,10 @@ Second, we create the actionWorld method:
 ```php
 <?php
  
-namespace App\Web;
+namespace App\Http;
 
-use App\Web\Controller;
-use Bete\Web\Request;
+use App\Http\Controller;
+use Bete\Http\Request;
 
 class HelloController extends Controller
 {

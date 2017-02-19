@@ -1,8 +1,8 @@
-# Web
+# Http
 
-You can run BetePHP app in two ways: Web and Console, Web is used for handling web page or api request, and Console is used for access throught console command.
+You can run BetePHP app in two ways: Http and Console, Http is used for handling web page or api request, and Console is used for access throught console command.
 
-The process for handling Web request include Route, Middleware, Controller Action, Model and View, see below:
+The process for handling Http request include Route, Middleware, Controller Action, Model and View, see below:
 ![Screenshot](/img/process.png)
 
 1. A user make a url request;
@@ -14,7 +14,7 @@ The process for handling Web request include Route, Middleware, Controller Actio
 7. Last, print the rendered content to user;
 
 ## Route
-In default configure, the `abc/edf` request will route to the `actionDef` method of `App\Web\AbcController`, if you want to change this rule in some case, you need to modify the route configure.
+In default configure, the `abc/edf` request will route to the `actionDef` method of `App\Http\AbcController`, if you want to change this rule in some case, you need to modify the route configure.
 
 ### Custom route
 Modify `config/route.php` to configure your custom route rule:
@@ -82,9 +82,9 @@ You can configure middleware throught define the middlewares attribute of the co
 
 <?php
  
-namespace App\Web;
+namespace App\Http;
 
-use Bete\Web\Request;
+use Bete\Http\Request;
 
 class ExampleController extends Controller
 {
@@ -99,15 +99,15 @@ class ExampleController extends Controller
 The above configure include: CheckToken Middleware will be added for all the actions, CheckCsrf will be added for register and login action, CheckLogin will be added for all the actions except index.
 
 ## Controller
-A web request 
-The main logic for a web request is defined in the `action{Name}` method of `App\Web\{Name}Controller`, see below:
+A http request 
+The main logic for a http request is defined in the `action{Name}` method of `App\Http\{Name}Controller`, see below:
 
 ```php
 <?php
 
-namespace App\Web;
+namespace App\Http;
 
-use Bete\Web\Request;
+use Bete\Http\Request;
 
 class ExampleController extends Controller
 {
